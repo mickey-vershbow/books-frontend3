@@ -1,0 +1,523 @@
+/* --------------------------
+        VARIABLES
+-------------------------- */
+
+$main: #bb86fc;
+$main-variant: #3700bc;
+$alt-main: #03dac6;
+$bg: #121212;
+$surface: #121212;
+$error: #cf6679;
+$on-main: #000000;
+$on-alt-main: #000000;
+$on-bg: #ffffff;
+$on-surface: #ffffff;
+$on-error: #000000;
+
+// 1. bg (0dp elevation surface overlay)
+// 2. Surface (with 1dp elevation surface overlay)
+
+$main-font: "Lora", serif;
+$secondary-font: "Roboto Slab", serif;
+
+$reg: 400;
+$bold: 700;
+$bolder: 800;
+
+$fs-h1: 3rem;
+$fs-h2: 2.25rem;
+$fs-h3: 1.25rem;
+$fs-body: 1rem;
+
+// box-shadow
+$bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+  0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+  background-color: $bg;
+  line-height: 1.5em;
+  background: url("https://soleilyasmina.com/static/media/background.37e7669f.jpg");
+  background-size: cover;
+}
+
+/* --------------------------
+      GENERAL STYLES
+-------------------------- */
+
+/* --------------------------
+      TYPOGRAPHY
+-------------------------- */
+
+/* --------------------------
+        FORMS
+-------------------------- */
+
+@function dp($_dp) {
+  @return (72 / 160) * $_dp + pt;
+}
+
+.form {
+  height: dp(3);
+  max-width: 70%;
+  margin: 0 auto;
+  position: relative;
+  color: $on-bg;
+}
+
+.form-label {
+  color: $on-bg;
+  font-size: $fs-h3;
+  font-weight: $reg;
+}
+
+.form-text {
+  color: $on-bg;
+  font-size: $fs-body;
+}
+
+.form-inline {
+  justify-content: center;
+}
+
+.search-form_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+/* --------------------------
+        BUTTONS
+-------------------------- */
+
+#btn {
+  font-size: $fs-h3;
+  color: $on-bg;
+  border-radius: 7px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: $bold;
+  transition: transform 200ms ease-in-out;
+  padding: 0.5em 1.5em;
+  border: none;
+  background: $main;
+  font-family: $secondary-font;
+}
+
+#btn:hover {
+  transform: scale(1.1);
+}
+
+#learn-more {
+  background: $main;
+  color: $on-bg;
+  border-radius: 7px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: $bold;
+  transition: transform 200ms ease-in-out;
+  padding: 0.5em 0.5em;
+  border: none;
+  font-family: $secondary-font;
+}
+
+#learn-more:hover {
+  transform: scale(1.1);
+}
+
+#btn-new {
+  background-color: $alt-main;
+  color: $on-alt-main;
+  width: 200px;
+  border-radius: 7px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: $bold;
+  transition: transform 200ms ease-in-out;
+  padding: 0.5em 0.5em;
+  border: none;
+  font-family: $secondary-font;
+}
+
+#btn-new:hover {
+  transform: scale(1.1);
+}
+
+#btn-edit-delete {
+  background-color: $main;
+  color: $on-bg;
+  border-radius: 7px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: $bold;
+  transition: transform 200ms ease-in-out;
+  padding: 0.5em 0.5em;
+  border: none;
+  font-family: $secondary-font;
+}
+
+#btn-edit-delete:hover {
+  transform: scale(1.1);
+  text-transform: uppercase;
+  color: $error;
+}
+
+#btn-search:hover {
+  transform: scale(1.1);
+}
+
+#btn-search {
+  border-radius: 4px;
+  background: $main;
+  padding: 8px 14px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-family: $secondary-font;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: $main-variant;
+    // color: #010606;
+  }
+}
+
+#btn-logout {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  height: 100%;
+  cursor: pointer;
+  font-family: $secondary-font;
+  &:hover {
+    color: #15cdfc;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $error;
+  }
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --------------------------
+     NAVBAR COMPONENT
+-------------------------- */
+
+.nav-link:hover {
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  color: #ffffff;
+}
+
+.nav-logo:hover {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $on-bg;
+}
+
+.nav-logo,
+.nav-link {
+  font-family: $secondary-font;
+}
+
+/* --------------------------
+      LANDING PAGE
+-------------------------- */
+
+.landing {
+  color: $on-surface;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.landing__text--h1,
+.landing__text--h2 {
+  padding: 1em;
+}
+
+// Font Awesome down-arrow on landing page
+#root > div > div > a > svg {
+  height: 2em;
+  width: 2em;
+  color: $alt-main;
+  &:hover {
+    height: 3em;
+    width: 3em;
+    color: $on-bg;
+  }
+}
+
+/* --------------------------
+      HOME PAGE
+-------------------------- */
+
+.loading-message_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+  grid-auto-rows: auto;
+  grid-gap: 1.5rem;
+  padding: 30px;
+}
+
+.card {
+  margin-bottom: 120px;
+  color: $on-bg;
+  box-shadow: 25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f;
+  transition: 0.3s all ease-in-out;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  background-color: $bg;
+}
+
+.card:hover {
+  margin-top: -10px;
+}
+
+.card-img {
+  margin-bottom: 20px;
+  max-width: fit-content;
+}
+
+.fa-book-open {
+  text-decoration: none;
+  color: $on-bg;
+  &:hover {
+    text-decoration: none;
+    color: $alt-main;
+  }
+}
+
+.fa-star {
+  color: white;
+  &:hover {
+    color: #ffd700;
+  }
+}
+
+.fa-star,
+.fa-book-open {
+  cursor: pointer;
+  font-size: 2em;
+}
+
+// DATE DISPLAY
+
+.date-section {
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: $alt-main;
+  padding: 15px;
+}
+
+.title-container {
+  background-color: $alt-main;
+  display: flex;
+  justify-content: center;
+}
+
+.date-text-container {
+  background-color: $alt-main;
+  display: flex;
+  justify-content: center;
+}
+
+.date-title {
+  color: $on-bg;
+  font-size: $fs-h2;
+  font-weight: $reg;
+  background-color: $alt-main;
+  font-family: $secondary-font;
+}
+
+p strong {
+  background-color: $alt-main;
+  color: $on-bg;
+}
+
+.date-text {
+  color: $on-bg;
+  font-size: $fs-h3;
+  font-weight: $reg;
+  background-color: $alt-main;
+}
+
+.date-limit {
+  color: $on-bg;
+  opacity: 0.5;
+  font-weight: $reg;
+  text-align: center;
+}
+
+/* --------------------------
+          DASHBOARD
+-------------------------- */
+
+.dashboard-header {
+  display: flex;
+  justify-content: center;
+  font-size: $fs-h2;
+  color: $on-bg;
+  font-weight: $bolder;
+  margin-top: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  text-decoration-color: $alt-main;
+}
+
+.new-form {
+  display: flex;
+  justify-content: center;
+}
+
+.fa-trash {
+  color: white;
+  font-size: 2em;
+  &:hover {
+    color: $error;
+  }
+}
+
+.dashboard-cards__btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --------------------------
+          SHOW PAGE
+-------------------------- */
+.show-page__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 2fr));
+  grid-auto-rows: auto;
+  grid-gap: 1.5rem;
+  padding: 30px;
+}
+
+.show-page__back-button {
+  color: white;
+  font-size: 4em;
+  margin-left: 2em;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    color: $alt-main;
+  }
+}
+
+#show-page-header {
+  font-weight: 700;
+  margin: 20px;
+  justify-content: center;
+  font-size: $fs-h1;
+  position: relative;
+  color: $on-bg;
+  display: flex;
+  font-family: $secondary-font;
+}
+
+.show-page__card-title,
+.show-page__card-subtitle {
+  text-align: center;
+  font-family: $secondary-font;
+}
+
+.show-page__img {
+  margin: 1rem 0rem;
+}
+
+.show-page__container > p {
+  font-size: $fs-body;
+}
+
+.show-page__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-page__description {
+  font-size: larger;
+}
+
+.show-page__buy-links > a {
+  text-decoration: none;
+  color: $main-variant;
+  font-size: $fs-h3;
+  font-weight: $bold;
+  cursor: pointer;
+  letter-spacing: 2px;
+  &:hover {
+    text-transform: uppercase;
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    color: $on-bg;
+  }
+}
+
+.show-page__buy-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-page__buy-links-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  color: $on-bg;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+/* --------------------------
+          MEDIA QUERIES
+-------------------------- */
+
+@media screen and (max-width: 992px) {
+  header nav {
+    display: block;
+    justify-content: center;
+  }
+
+  header nav div {
+    margin-bottom: 10px;
+  }
+}
