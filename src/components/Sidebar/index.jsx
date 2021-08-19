@@ -13,7 +13,7 @@ import {
 
 const Sidebar = ({ isOpen, toggle, history }) => {
     const { state, dispatch } = useAppState();
-    const { url } = state;
+
 
     const processLogout = () => {
         dispatch({ type: 'logout' });
