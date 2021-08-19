@@ -12,7 +12,7 @@ import { FaBookOpen } from "react-icons/fa";
 function Dashboard(props) {
   // destructuring state, dispatch, and variables from State
   const { state, dispatch } = useAppState();
-  const { token, url, books, username, getBooks } = state;
+  const { token, url, books, username } = state;
 
   // const buyLinks = bestsellers.buy_links.map((book) => (
   //   <a href={book.table.url} target="blank">
