@@ -33,44 +33,37 @@ const reducer = (state, action) => {
     case "auth":
       newState = { ...state, ...action.payload };
       return newState;
-      break;
+    // break;
     case "logout":
       newState = { ...state, token: null, username: null };
       window.localStorage.removeItem("auth");
       return newState;
-      break;
     // Get user's books index on dashboard page
     case "getBooks":
       newState = { ...state, books: action.payload };
       return newState;
-      break;
+
     case "select":
       newState = { ...state, edit: action.payload };
       return newState;
-      break;
     // get nytimes api current bestsellers list
     case "getBestsellers":
       newState = { ...state, bestsellers: action.payload };
       return newState;
-      break;
-      // get individual bestseller/:rank
+    // get individual bestseller/:rank
     case "getBestseller":
       newState = { ...state, bestseller: action.payload };
       return newState;
-      break;
     // get bestsellersByDate
     case "getBestsellersSearch":
       newState = { ...state, bestsellersSearch: action.payload };
       return newState;
-      break;
     // Get list date specs -- requires separate API call
     case "getBestsellersDate":
       newState = { ...state, bestsellersDate: action.payload };
       return newState;
-      break;
     default:
       return state;
-      break;
   }
 };
 ////////////////////////////

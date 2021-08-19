@@ -57,9 +57,9 @@ $bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
         FORMS
 -------------------------- */
 
-@function dp($_dp) {
-  @return (72 / 160) * $_dp + pt;
-}
+// @function dp($_dp) {
+//   @return (72 / 160) * $_dp + pt;
+// }
 
 .form {
   height: dp(3);
@@ -393,12 +393,12 @@ p strong {
   display: flex;
   justify-content: center;
   font-size: $fs-h2;
-  color: $on-bg;
-  font-weight: $bolder;
+  color: $alt-main;
+  font-weight: $bold;
   margin-top: 2rem;
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
-  text-decoration-color: $alt-main;
+  // text-decoration: underline;
+  // text-underline-offset: 0.3em;
+  // text-decoration-color: $alt-main;
 }
 
 .new-form {

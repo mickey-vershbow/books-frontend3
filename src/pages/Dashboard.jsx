@@ -40,13 +40,11 @@ function Dashboard(props) {
   }, []);
 
   const loaded = () => (
-    <div className="dashboard">
+    <section className="dashboard">
       <p className="dashboard-header">
-        Hey there, {username}.
-        <br />
-        Here are your books:{" "}
+        Hey there, {username}. Here are your books:{" "}
       </p>
-      <section className="form-new-form">
+      {/* <section className="form-new-form">
         <Link to="/dashboard/new" className="new-form">
           <Button id="btn-new" style={{ textDecoration: "none" }}>
             New Book
@@ -56,7 +54,7 @@ function Dashboard(props) {
           path="/dashboard/:action"
           render={(rp) => <FormComponent {...rp} getBooks={getBooks} />}
         />
-      </section>
+      </section> */}
       <ul className="container">
         {books.map((book) => (
           <Card key={book.rank}>
@@ -99,7 +97,7 @@ function Dashboard(props) {
           </Card>
         ))}
       </ul>
-    </div>
+    </section>
   );
 
   return books ? (
