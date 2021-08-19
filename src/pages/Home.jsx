@@ -17,7 +17,7 @@ function Home(props) {
 
   // destructuring state, dispatch, and variables from State
   const { state, dispatch } = useAppState();
-  const { token, url, bestsellers, bestsellersDate, getBestsellers, getBestsellersCurrentDate, getBestsellersByDate, getBestsellersArchiveDate, books } = state;
+  const { token, url, bestsellers, bestsellersDate, books } = state;
 
   //////////////////////////////////////////
   // Fetch NYTimes bestsellers books index
