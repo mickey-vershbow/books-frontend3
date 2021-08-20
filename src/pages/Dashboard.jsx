@@ -14,12 +14,12 @@ function Dashboard(props) {
   const { state, dispatch } = useAppState();
   const { token, url, books, username, bestseller } = state;
 
-  // map over the "buy_links" array in bestseller data to access object 
-  const buyLinks = bestseller.buy_links.map((book) => (
-    <a href={book.table.url} target="blank">
-      {book.table.name}
-    </a>
-  ));
+  // map over the "buy_links" array in bestseller data to access object
+  // const buyLinks = bestseller.buy_links.map((book) => (
+  //   <a href={book.table.url} target="blank">
+  //     {book.table.name}
+  //   </a>
+  // ));
 
   // Fetch user's books index
   const getBooks = async () => {
@@ -64,15 +64,15 @@ function Dashboard(props) {
               <h5 className="show-page__card-subtitle">by {book.author}</h5>
               <div className="show-page__image-container"></div>
               <Card.Img
-                style={{ cursor: "pointer" }}
+                // style={{ cursor: "pointer" }}
                 src={book.book_image}
                 alt=""
                 className="show-page__img"
-                onClick={() => {
-                  // show page
-                  dispatch({ type: "getBestseller", payload: bestseller });
-                  props.history.push("/bestseller/show");
-                }}
+                // onClick={() => {
+                //   // show page
+                //   dispatch({ type: "getBestseller", payload: bestseller });
+                //   props.history.push("/bestseller/show");
+                // }}
               />
               <p className="show-page__description">{book.description}</p>
               <div className="dashboard-cards__btn">

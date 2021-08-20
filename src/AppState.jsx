@@ -11,6 +11,7 @@ const initialState = {
   books: null,
   bestseller: null,
   date: null,
+  buy_links: null,
   new: {
     title: "",
     author: "",

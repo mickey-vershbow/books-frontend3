@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useAppState } from "../AppState.jsx";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
 import Card from "react-bootstrap/Card";
 import Loader from "react-loader-spinner";
 
