@@ -20,7 +20,7 @@ const Navbar = ({ toggle, history, location }) => {
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav>
           <NavbarContainer>
-            <NavLogo className="nav-logo" to="/">
+            <NavLogo id="nav-logo" className="nav-logo" to="/">
               Books on Rails
             </NavLogo>
             <MobileIcon onClick={toggle}>

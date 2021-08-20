@@ -48,6 +48,7 @@ function Show(props) {
             </div>
             <p className="show-page__description">{bestseller.description}</p>
             <hr />
+            <div className="card-stats">
             <p>
               <strong>Rank Last Week: </strong>
               {bestseller.rank_last_week}
@@ -60,7 +61,7 @@ function Show(props) {
               <strong>Publisher: </strong>
               {bestseller.publisher}
             </p>
-            <hr />
+            </div>
             <div className="show-page__buy-links-title-container">
               <h3 className="show-page__buy-links-title">Buy This Book</h3>
             </div>

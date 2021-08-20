@@ -130,13 +130,20 @@ function Home(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // books index from search date
-    getBestsellersByDate(formData.date);
-    // date specs for list corresponding to search
-    getBestsellersArchiveDate(formData.date);
-    setFormData({
-      date: "",
-    });
+    try {
+      if (Date.parse(formData.date)) {
+        // books index from search date
+        getBestsellersByDate(formData.date);
+        // date specs for list corresponding to search
+        getBestsellersArchiveDate(formData.date);
+        setFormData({
+          date: "",
+        });
+      }
+    } catch {
+      props.history.push("/home");
+      console.log("enter valid date!");
+    }
   };
 
   //////////////////////////////////////////
@@ -171,6 +178,7 @@ function Home(props) {
             <Form.Control
               type="text"
               name="date"
+              pattern="\d{2}-\d{d}-\d{4}"
               className="search-form mr-sm-2"
               value={formData.date}
               onChange={handleChange}

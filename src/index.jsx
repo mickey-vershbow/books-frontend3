@@ -11,9 +11,9 @@ import AlertTemplate from "react-alert-template-basic";
 
 // optional cofiguration for pop-up alerts
 const options = {
-  position: "top center",
+  position: "bottom center",
   timeout: 2000,
-  offset: "40px",
+  offset: "30px",
   transition: "scale",
   color: "yellow",
 };

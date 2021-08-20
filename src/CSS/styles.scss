@@ -191,18 +191,10 @@ $bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
 
 #btn-logout {
   color: #fff;
-  display: flex;
-  align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
-  font-size: 1.2rem;
-  height: 100%;
-  cursor: pointer;
   font-family: $secondary-font;
   &:hover {
-    color: #15cdfc;
     text-decoration: none;
-    text-transform: uppercase;
     color: $error;
   }
 }
@@ -231,6 +223,12 @@ $bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
 .nav-logo,
 .nav-link {
   font-family: $secondary-font;
+}
+
+@media screen and (max-width: 768px) {
+  #nav-logo {
+    font-size: 1.4em;
+  }
 }
 
 /* --------------------------
@@ -313,6 +311,15 @@ $bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
 .card-img {
   margin-bottom: 20px;
   max-width: fit-content;
+}
+
+.card-text {
+  max-width: fit-content;
+}
+
+.card-stats {
+  font-size: $fs-h3;
+  margin: 1em 2em;
 }
 
 .fa-book-open {
@@ -422,12 +429,18 @@ p strong {
 /* --------------------------
           SHOW PAGE
 -------------------------- */
+// .show-page__container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(550px, 2fr));
+//   grid-auto-rows: auto;
+//   grid-gap: 1.5rem;
+//   padding: 30px;
+// }
+
 .show-page__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(550px, 2fr));
-  grid-auto-rows: auto;
-  grid-gap: 1.5rem;
-  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .show-page__back-button {
@@ -474,21 +487,23 @@ p strong {
 
 .show-page__description {
   font-size: larger;
+  margin: 1em 2em;
 }
 
 .show-page__buy-links > a {
   text-decoration: none;
-  color: $main-variant;
+  color: $on-bg;
   font-size: $fs-h3;
   font-weight: $bold;
   cursor: pointer;
   letter-spacing: 2px;
+  margin: 0em 2em;
   &:hover {
     text-transform: uppercase;
     transition: transform 200ms ease-in-out;
     cursor: pointer;
     text-decoration: none;
-    color: $on-bg;
+    color: $main;
   }
 }
 

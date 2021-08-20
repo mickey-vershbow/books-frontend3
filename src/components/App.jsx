@@ -45,6 +45,7 @@ export const App = (props) => {
     <>
       <Switch>
         <Route exact path="/" component={Landing} />
+        {/* Landing page is outside the div so the Navbar doesn't show */}
         <div>
           <Navbar isOpen={isOpen} toggle={toggle} />
           <Sidebar isOpen={isOpen} toggle={toggle} />
