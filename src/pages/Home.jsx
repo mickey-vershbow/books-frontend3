@@ -227,7 +227,6 @@ function Home(props) {
                   href={bestseller.amazon_product_url}
                   target="blank"
                 >
-                  {/* <i className="fa-solid fa-book-open">📖︁</i> */}
                   <FaBookOpen className="fa-book-open" />
                 </a>
               </div>
