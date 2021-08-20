@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useAppState } from "../AppState.jsx";
 import Card from "react-bootstrap/Card";
 import { useAlert } from "react-alert";
@@ -13,6 +13,8 @@ function Home(props) {
   const [formData, setFormData] = React.useState({
     date: "",
   });
+
+  const [error, setError] = React.useState("");
 
   // destructuring state, dispatch, and variables from State
   const { state, dispatch } = useAppState();
