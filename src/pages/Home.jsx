@@ -7,6 +7,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { FaBookOpen } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
+import Moment from "react-moment";
 
 function Home(props) {
   const [formData, setFormData] = React.useState({
@@ -73,6 +74,7 @@ function Home(props) {
         body: JSON.stringify(book),
       });
       books.push(book);
+      console.log(response);
       alert.success(
         <div
           style={{ background: "#03dac6", color: "#000000", padding: "5px" }}
@@ -151,13 +153,17 @@ function Home(props) {
         <div className="date-text-container">
           <p className="date-text">
             <strong>Bestsellers Date: </strong>
-            {bestsellersDate?.table.bestsellers_date}
+            <Moment format="MMMM DD, YYYY">
+              {bestsellersDate?.table.bestsellers_date}
+            </Moment>
           </p>
         </div>
         <div className="date-text-container">
           <p className="date-text">
             <strong>Published Date: </strong>
-            {bestsellersDate?.table.published_date}
+            <Moment format="MMMM DD, YYYY">
+              {bestsellersDate?.table.published_date}
+            </Moment>
           </p>
         </div>
         <div className="search-form_container">

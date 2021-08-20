@@ -7,8 +7,8 @@ import Loader from "react-loader-spinner";
 
 function Show(props) {
   // destructuring state, dispatch, and variables from State
-  const { state, dispatch } = useAppState();
-  const { url, bestseller } = state;
+  const { state } = useAppState();
+  const { bestseller } = state;
 
   const buyLinks = bestseller.buy_links.map((book) => (
     <a href={book.table.url} target="blank">

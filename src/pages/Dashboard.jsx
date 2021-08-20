@@ -12,8 +12,14 @@ import { FaBookOpen } from "react-icons/fa";
 function Dashboard(props) {
   // destructuring state, dispatch, and variables from State
   const { state, dispatch } = useAppState();
-  const { token, url, books, username } = state;
+  const { token, url, books, username, bestseller } = state;
 
+  // map over the "buy_links" array in bestseller data to access object properties
+  const buyLinks = bestseller.buy_links.map((book) => (
+    <a href={book.table.url} target="blank">
+      {book.table.name}
+    </a>
+  ));
 
   // Fetch user's books index
   const getBooks = async () => {
@@ -57,13 +63,17 @@ function Dashboard(props) {
               <h3 className="show-page__card-title">"{book.title}"</h3>
               <h5 className="show-page__card-subtitle">by {book.author}</h5>
               <div className="show-page__image-container"></div>
-              <a href="https://www.google.com">
-                <Card.Img
-                  src={book.book_image}
-                  alt=""
-                  className="show-page__img"
-                />
-              </a>
+              <Card.Img
+                style={{ cursor: "pointer" }}
+                src={book.book_image}
+                alt=""
+                className="show-page__img"
+                onClick={() => {
+                  // show page
+                  dispatch({ type: "getBestseller", payload: bestseller });
+                  props.history.push("/bestseller/show");
+                }}
+              />
               <p className="show-page__description">{book.description}</p>
               <div className="dashboard-cards__btn">
                 <Button
