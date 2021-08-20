@@ -4,7 +4,7 @@ import React, { useContext, useReducer } from "react";
 // INITIAL STATE
 ////////////////////////////
 const initialState = {
-  url: "https://books-on-rails-backend.herokuapp.com",
+  url: "https://books-on-rails-backend2.herokuapp.com",
   // url: "http://localhost:3000",
   token: null,
   username: null,
@@ -42,7 +42,6 @@ const reducer = (state, action) => {
     case "getBooks":
       newState = { ...state, books: action.payload };
       return newState;
-
     case "select":
       newState = { ...state, edit: action.payload };
       return newState;

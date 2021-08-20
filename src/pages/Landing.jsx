@@ -1,10 +1,12 @@
 import React from "react";
 import { FaAngleDoubleDown } from "react-icons/fa";
-
+import { useAppState } from "../AppState.jsx";
 import { Link } from 'react-router-dom';
 
 
 function Landing() {
+
+
   return (
     <>
       <div className="landing">

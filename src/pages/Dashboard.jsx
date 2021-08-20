@@ -14,11 +14,6 @@ function Dashboard(props) {
   const { state, dispatch } = useAppState();
   const { token, url, books, username } = state;
 
-  // const buyLinks = bestsellers.buy_links.map((book) => (
-  //   <a href={book.table.url} target="blank">
-  //     {book.table.name}
-  //   </a>
-  // ));
 
   // Fetch user's books index
   const getBooks = async () => {
@@ -116,15 +111,3 @@ function Dashboard(props) {
 }
 
 export default Dashboard;
-
-{
-  /* <Button
-                id="btn-edit-delete"
-                onClick={() => {
-                  dispatch({ type: "select", payload: book });
-                  props.history.push("/dashboard/edit");
-                }}
-              >
-                Edit Book
-              </Button> */
-}

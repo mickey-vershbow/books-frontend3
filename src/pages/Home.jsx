@@ -1,9 +1,7 @@
 import React from "react";
 import { useAppState } from "../AppState.jsx";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { useAlert } from "react-alert";
-import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
