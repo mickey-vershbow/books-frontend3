@@ -11,14 +11,10 @@ import {
   NavLinks,
   NavLogo,
   NavMenu,
-  NavBtn,
-  NavBtnLink,
 } from "./NavbarElements.jsx";
 
 const Navbar = ({ toggle, history }) => {
   const { state, dispatch } = useAppState();
-
-  const { url } = state;
 
   return (
     <>

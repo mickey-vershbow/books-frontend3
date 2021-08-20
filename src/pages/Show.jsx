@@ -22,9 +22,17 @@ function Show(props) {
   const loaded = () => (
     <>
       <h1 id="show-page-header">Rank #{bestseller.rank}</h1>
-      <Link to="/home" style={{ textDecoration: "none" }}>
-        <i className="fa-solid fa-angles-left show-page__back-button">«︁</i>
-      </Link>
+
+      {!state.token ? (
+        <Link to="/home" style={{ textDecoration: "none" }}>
+          <i className="fa-solid fa-angles-left show-page__back-button">«︁</i>
+        </Link>
+      ) : null}
+      {state.token ? (
+        <Link to="/dashboard" style={{ textDecoration: "none" }}>
+          <i className="fa-solid fa-angles-left show-page__back-button">«︁</i>
+        </Link>
+      ) : null}
 
       {/* Books Cards */}
       <div className="container show-page__container">

@@ -14,7 +14,7 @@ function Dashboard(props) {
   const { state, dispatch } = useAppState();
   const { token, url, books, username, bestseller } = state;
 
-  // map over the "buy_links" array in bestseller data to access object properties
+  // map over the "buy_links" array in bestseller data to access object 
   const buyLinks = bestseller.buy_links.map((book) => (
     <a href={book.table.url} target="blank">
       {book.table.name}
