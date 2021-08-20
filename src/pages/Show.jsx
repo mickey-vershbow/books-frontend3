@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAppState } from "../AppState.jsx";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";

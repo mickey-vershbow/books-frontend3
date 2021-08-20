@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
-import { animateScroll as scroll } from "react-scroll";
 import { useAppState } from "../../AppState.jsx";
 import {
   MobileIcon,
@@ -13,7 +12,7 @@ import {
   NavMenu,
 } from "./NavbarElements.jsx";
 
-const Navbar = ({ toggle, history }) => {
+const Navbar = ({ toggle, history, location }) => {
   const { state, dispatch } = useAppState();
 
   return (

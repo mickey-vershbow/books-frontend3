@@ -1,7 +1,5 @@
 import React from "react";
 import { useAppState } from "../AppState.jsx";
-import { Route, Link } from "react-router-dom";
-import FormComponent from "../components/FormComponent.jsx";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -12,7 +10,7 @@ import { FaBookOpen } from "react-icons/fa";
 function Dashboard(props) {
   // destructuring state, dispatch, and variables from State
   const { state, dispatch } = useAppState();
-  const { token, url, books, username, bestseller } = state;
+  const { token, url, books, username } = state;
 
   // map over the "buy_links" array in bestseller data to access object
   // const buyLinks = bestseller.buy_links.map((book) => (
@@ -64,15 +62,15 @@ function Dashboard(props) {
               <h5 className="show-page__card-subtitle">by {book.author}</h5>
               <div className="show-page__image-container"></div>
               <Card.Img
-                // style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer" }}
                 src={book.book_image}
                 alt=""
                 className="show-page__img"
-                // onClick={() => {
-                //   // show page
-                //   dispatch({ type: "getBestseller", payload: bestseller });
-                //   props.history.push("/bestseller/show");
-                // }}
+                onClick={() => {
+                  // show page
+                  dispatch({ type: "getBooks", payload: books});
+                  props.history.push("/books/show");
+                }}
               />
               <p className="show-page__description">{book.description}</p>
               <div className="dashboard-cards__btn">

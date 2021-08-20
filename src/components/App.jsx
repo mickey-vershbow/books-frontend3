@@ -10,12 +10,14 @@ import Landing from "../pages/Landing.jsx";
 import Sidebar from "../components/Sidebar/index.jsx";
 
 export const App = (props) => {
+  // State for Navbar and Mobile Hamburger Menu
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
+  // State to handle browser back/forward buttons
   const [locationKeys, setLocationKeys] = React.useState([]);
   const history = useHistory();
 
@@ -41,24 +43,16 @@ export const App = (props) => {
 
   return (
     <>
-      <Route
-        path="/"
-        render={(props) => (
-          <Navbar {...props} isOpen={isOpen} toggle={toggle} />
-        )}
-      />
-      <Route
-        path="/"
-        render={(props) => (
-          <Sidebar {...props} isOpen={isOpen} toggle={toggle} />
-        )}
-      />
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/home" component={Home} />
-        <Route path="/auth/:form" component={Auth} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/bestseller/show" render={(rp) => <Show {...rp} />} />
+        <div>
+          <Navbar isOpen={isOpen} toggle={toggle} />
+          <Sidebar isOpen={isOpen} toggle={toggle} />
+          <Route path="/home" component={Home} />
+          <Route path="/auth/:form" component={Auth} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/bestseller/show" render={(rp) => <Show {...rp} />} />
+        </div>
       </Switch>
     </>
   );
