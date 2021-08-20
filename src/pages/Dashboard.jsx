@@ -97,7 +97,7 @@ function Dashboard(props) {
                 >
                   <a
                     style={{ textDecoration: "none" }}
-                    href={bestseller.amazon_product_url}
+                    href={book.amazon_product_url}
                     target="blank"
                   >
                     <FaBookOpen className="fa-book-open" />
