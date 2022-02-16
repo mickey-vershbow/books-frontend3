@@ -142,8 +142,15 @@ function Home(props) {
           date: "",
         });
       }
-    } catch {
-      props.history.push("/home");
+    } catch (error) {
+      event.preventDefault();
+       alert.error(
+         <div
+           style={{ background: "#cf6679", color: "#000000", padding: "5px" }}
+         >
+           Please log in!
+         </div>
+       );
       console.log("enter valid date!");
     }
   };
@@ -180,7 +187,7 @@ function Home(props) {
             <Form.Control
               type="text"
               name="date"
-              pattern="\d{2}-\d{d}-\d{4}"
+              pattern="/^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/"
               className="search-form mr-sm-2"
               value={formData.date}
               onChange={handleChange}
