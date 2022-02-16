@@ -3,7 +3,7 @@
 A web app for viewing archival NYTimes Bestseller Books data and creating a personal collection of favorites.
 
 [Live Link](https://booksonrails1.netlify.app/)
-[Frontend Code](https://github.com/mickey-vershbow/books_frontend3.git)
+
 [Backend Code](https://github.com/mickey-vershbow/books-backend3.git)
 
 # Getting Started
@@ -36,6 +36,3 @@ Clone the repo and run 'npm install'. From there you should be able to run 'npm 
 
 - The ability to search non-fiction and other lists.
 - Error handling.
-
-
-
